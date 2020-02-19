@@ -3,7 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { FriendContext } from "../context/FriendContext";
 
 const NewFriendForm = ({ history }) => {
-    const {friend, setFriend} = useContext(FriendContext)
+    const {setFriend} = useContext(FriendContext)
     const [addFriend, setAddFriend] = useState({
         id: Date.now(),
         name: "",
@@ -25,7 +25,7 @@ const NewFriendForm = ({ history }) => {
                     age: "",
                     email: ""
                 })
-                setFriend([...friend, response])
+                setFriend(response.data)
                 history.push("/protected")
             })
     }

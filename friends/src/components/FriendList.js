@@ -12,13 +12,12 @@ const FriendList = () => {
                 console.log("Friends: ", response)
                 setFriend(response.data)
             })
-        }, [])
+         }, [setFriend])
 
     return (
         <div>
         <h1>Friend List</h1>
             {friend.map(friend => {
-                console.log("Friend List: ", friend)
                 return <Friends key={friend.id} friend={friend} />
             })}
         </div>

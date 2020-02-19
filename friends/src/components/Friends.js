@@ -8,10 +8,12 @@ const Friends = (props) => {
     
     const handleDelete = id => {
         axiosWithAuth()
-        .delete(`friends/${id}`)
-        .then(response => setFriend(friend.filter(friend => friend.id !== id)))
-        .catch(err => console.log("Error", err))
+          .delete(`friends/${id}`)
+          .then(response => setFriend(friend.filter(friend => friend.id !== id)))
+          .catch(err => console.log("Error", err))
     };
+
+
   return (
     <div className="card">
       <div className="row">
